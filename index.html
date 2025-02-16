@@ -148,9 +148,13 @@
 
         function optimizeDevice() {
             const deviceInput = document.getElementById('deviceInput').value;
-            alert(`Đã buff max hiệu xuất cho thiết bị: ${deviceInput}`);
-            const optimizeDeviceBtn = document.getElementById('optimizeDeviceBtn');
-            optimizeDeviceBtn.classList.add('btn-green');
+            if (deviceInput.trim() === "") {
+                alert('Thiết bị không xác định');
+            } else {
+                alert(`Đã buff max hiệu xuất cho thiết bị: ${deviceInput}`);
+                const optimizeDeviceBtn = document.getElementById('optimizeDeviceBtn');
+                optimizeDeviceBtn.classList.add('btn-green');
+            }
         }
     </script>
 </body>
