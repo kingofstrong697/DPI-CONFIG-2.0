@@ -11,23 +11,23 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-image: url('https://anhgaixinh.tv/wp-content/uploads/2023/05/anh-gai-xinh-khoe-vong-1.jpg'); /* Thay URL_CUA_HINH_ANH_CUA_BAN bằng URL của hình ảnh bạn chọn */
+            background-image: url('https://anhgaixinh.tv/wp-content/uploads/2023/05/anh-gai-xinh-khoe-vong-1.jpg');
             background-size: cover;
             background-position: center;
         }
         .panel {
-            border: 1px solid transparent; /* Xóa viền */
+            border: 1px solid transparent;
             padding: 16px;
             border-radius: 8px;
-            box-shadow: none; /* Xóa bóng */
-            background-color: transparent; /* Màu trong suốt cho bảng */
+            box-shadow: none;
+            background-color: transparent;
             text-align: center;
             width: 90%;
             max-width: 400px;
             box-sizing: border-box;
         }
         .panel-heading {
-            font-size: 1.25em;
+            font-size: 1.75em; /* Tăng kích thước chữ */
             margin-bottom: 8px;
             background: linear-gradient(45deg, #ff6ec4, #7873f5);
             -webkit-background-clip: text;
@@ -43,7 +43,7 @@
             padding: 8px 16px;
             margin-top: 8px;
             cursor: pointer;
-            border-radius: 12px; /* Làm nút hơi tròn */
+            border-radius: 12px;
             color: black; /* Đổi màu chữ thành màu đen */
             width: 100%;
             max-width: 200px;
@@ -59,7 +59,7 @@
         }
         input {
             padding: 12px;
-            border-radius: 12px; /* Làm ô nhập liệu tròn hơn */
+            border-radius: 12px;
             border: 1px solid #ccc;
             width: 100%;
             max-width: 300px;
@@ -72,6 +72,9 @@
             background: linear-gradient(45deg, #ff6ec4, #7873f5);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+        }
+        .dev-text {
+            font-size: 1.25em; /* Tăng kích thước chữ Dev: Rin */
         }
     </style>
 </head>
@@ -86,7 +89,7 @@
     </div>
 
     <div id="panel2" class="panel hidden">
-        <div class="panel-heading gradient-text">Welcome to App Config 2.0 - Admin Rin</div>
+        <div class="panel-heading gradient-text" style="font-size: 1.75em;">Welcome to App Config 2.0 - Admin Rin</div> <!-- Tăng kích thước chữ -->
         <div class="panel-body">
             <button id="optimizeBtn" class="btn" onclick="optimize()">Optimized DPI Config 2.0</button><br><br>
             <button id="zenithBoostBtn" class="btn" onclick="zenithBoost()">Zenith Boost Device 2.0</button><br><br>
@@ -97,7 +100,7 @@
             <button id="changeRestoreBtn" class="btn" onclick="changeRestore()">Change Restore Setting VIP on Device</button><br><br>
             <input type="text" id="deviceInput" placeholder="Nhập thiết bị cần tối ưu hóa"><br><br>
             <button id="optimizeDeviceBtn" class="btn" onclick="optimizeDevice()">Tối ưu hóa thiết bị</button><br><br>
-            <div class="gradient-text">Dev: Rin</div>
+            <div class="gradient-text dev-text">Dev: Rin</div> <!-- Tăng kích thước chữ Dev: Rin -->
         </div>
     </div>
 
