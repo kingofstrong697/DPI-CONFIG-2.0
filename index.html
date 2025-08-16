@@ -1,173 +1,393 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TRỌNG NGHĨA IOS</title>
     <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+        * {
             margin: 0;
-            background-image: url('https://anhgaixinh.tv/wp-content/uploads/2023/05/anh-gai-xinh-khoe-vong-1.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-        .panel {
-            border: 1px solid transparent;
-            padding: 16px;
-            border-radius: 8px;
-            box-shadow: none;
-            background-color: transparent;
-            text-align: center;
-            width: 90%;
-            max-width: 400px;
+            padding: 0;
             box-sizing: border-box;
         }
-        .panel-heading {
-            font-size: 1.75em; /* Tăng kích thước chữ */
-            margin-bottom: 8px;
-            background: linear-gradient(45deg, #ff6ec4, #7873f5);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
         }
-        .panel-body {
-            font-size: 1em;
+        
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
         }
-        .hidden {
+        
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 1; }
+            50% { transform: translateY(-20px) rotate(180deg); opacity: 0.5; }
+        }
+        
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            min-width: 400px;
+        }
+        
+        .login-screen {
+            display: block;
+        }
+        
+        .menu-screen {
             display: none;
         }
-        .btn {
-            padding: 8px 16px;
-            margin-top: 8px;
-            cursor: pointer;
-            border-radius: 12px;
-            color: black; /* Đổi màu chữ thành màu đen */
-            width: 100%;
-            max-width: 200px;
-            box-sizing: border-box;
-        }
-        .btn-login {
-            padding: 6px 12px;
-            max-width: 150px;
-        }
-        .btn-green {
-            background-color: green;
-            color: white;
-        }
-        input {
-            padding: 12px;
-            border-radius: 12px;
-            border: 1px solid #ccc;
-            width: 100%;
-            max-width: 300px;
-            box-sizing: border-box;
-        }
-        input::placeholder {
-            color: #aaa;
-        }
-        .gradient-text {
-            background: linear-gradient(45deg, #ff6ec4, #7873f5);
+        
+        .logo {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        .dev-text {
-            font-size: 1.25em; /* Tăng kích thước chữ Dev: Rin */
+        
+        .input-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        .input-field {
+            width: 100%;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .input-field::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .input-field:focus {
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+            transform: scale(1.02);
+        }
+        
+        .btn {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn:active {
+            transform: translateY(0);
+        }
+        
+        .menu-title {
+            font-size: 2em;
+            color: #fff;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .feature-name {
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        
+        .toggle-switch {
+            width: 50px;
+            height: 25px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 25px;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .toggle-switch.active {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+        }
+        
+        .toggle-knob {
+            width: 21px;
+            height: 21px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .toggle-switch.active .toggle-knob {
+            left: 27px;
+        }
+        
+        .status-indicator {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #ff4444;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card.active .status-indicator {
+            background: #44ff44;
+            box-shadow: 0 0 10px #44ff44;
+        }
+        
+        .error-message {
+            color: #ff6b6b;
+            margin-top: 15px;
+            font-size: 14px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .error-message.show {
+            opacity: 1;
+        }
+        
+        .logout-btn {
+            margin-top: 20px;
+            background: linear-gradient(45deg, #ff4444, #ff6b6b);
+            width: auto;
+            padding: 10px 20px;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
-    <div id="panel1" class="panel">
-        <div class="panel-heading gradient-text">App Config by RIN</div>
-        <div class="panel-body">
-            <input type="text" id="username" placeholder="Nhập tài khoản"><br><br>
-            <input type="password" id="password" placeholder="Nhập mật khẩu"><br><br>
-            <button class="btn btn-login" onclick="login()">Đăng nhập</button><br><br>
+    <!-- Particles Background -->
+    <div class="particles" id="particles"></div>
+    
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Login Screen -->
+        <div class="login-screen" id="loginScreen">
+            <div class="logo">TRỌNG NGHĨA</div>
+            <div class="input-group">
+                <input type="password" class="input-field" id="keyInput" placeholder="Nhập key..." maxlength="8">
+            </div>
+            <button class="btn" onclick="checkKey()">SUCCESS</button>
+            <div class="error-message" id="errorMessage">Key không đúng! Vui lòng thử lại.</div>
+        </div>
+        
+        <!-- Menu Screen -->
+        <div class="menu-screen" id="menuScreen">
+            <div class="menu-title">TRỌNG NGHĨA IOS</div>
+            <div class="feature-grid">
+                <div class="feature-card" onclick="toggleFeature(this)">
+                    <div class="status-indicator"></div>
+                    <div class="feature-name">Aim Lock</div>
+                    <div class="toggle-switch">
+                        <div class="toggle-knob"></div>
+                    </div>
+                </div>
+                
+                <div class="feature-card" onclick="toggleFeature(this)">
+                    <div class="status-indicator"></div>
+                    <div class="feature-name">No Recoil</div>
+                    <div class="toggle-switch">
+                        <div class="toggle-knob"></div>
+                    </div>
+                </div>
+                
+                <div class="feature-card" onclick="toggleFeature(this)">
+                    <div class="status-indicator"></div>
+                    <div class="feature-name">Nhẹ Tâm</div>
+                    <div class="toggle-switch">
+                        <div class="toggle-knob"></div>
+                    </div>
+                </div>
+                
+                <div class="feature-card" onclick="toggleFeature(this)">
+                    <div class="status-indicator"></div>
+                    <div class="feature-name">Head Lock</div>
+                    <div class="toggle-switch">
+                        <div class="toggle-knob"></div>
+                    </div>
+                </div>
+                
+                <div class="feature-card" onclick="toggleFeature(this)">
+                    <div class="status-indicator"></div>
+                    <div class="feature-name">Optimizer</div>
+                    <div class="toggle-switch">
+                        <div class="toggle-knob"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="btn logout-btn" onclick="logout()">Đăng xuất</button>
         </div>
     </div>
-
-    <div id="panel2" class="panel hidden">
-        <div class="panel-heading gradient-text" style="font-size: 1.75em;">Welcome to App Config 2.0 - Admin Rin</div> <!-- Tăng kích thước chữ -->
-        <div class="panel-body">
-            <button id="optimizeBtn" class="btn" onclick="optimize()">Optimized DPI Config 2.0</button><br><br>
-            <button id="zenithBoostBtn" class="btn" onclick="zenithBoost()">Zenith Boost Device 2.0</button><br><br>
-            <button id="noRecoilBtn" class="btn" onclick="noRecoil()">Automatic Norecoil 2.0</button><br><br>
-            <button id="fakeAimBtn" class="btn" onclick="fakeAim()">Fake Aim xPanel</button><br><br>
-            <button id="downloadConfigBtn" class="btn" onclick="downloadConfig()">Download Config on Device</button><br><br>
-            <button id="boostCpuBtn" class="btn" onclick="boostCpu()">Boost CPU on Device</button><br><br>
-            <button id="changeRestoreBtn" class="btn" onclick="changeRestore()">Change Restore Setting VIP on Device</button><br><br>
-            <input type="text" id="deviceInput" placeholder="Nhập thiết bị cần tối ưu hóa"><br><br>
-            <button id="optimizeDeviceBtn" class="btn" onclick="optimizeDevice()">Tối ưu hóa thiết bị</button><br><br>
-            <div class="gradient-text dev-text">Dev: Rin</div> <!-- Tăng kích thước chữ Dev: Rin -->
-        </div>
-    </div>
-
+    
     <script>
-        function login() {
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-            if (username === 'rin' && password === '1') {
-                document.getElementById('panel1').classList.add('hidden');
-                document.getElementById('panel2').classList.remove('hidden');
-            } else {
-                alert('Sai tài khoản hoặc mật khẩu');
+        const correctKey = "19022010";
+        
+        // Create floating particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 6 + 's';
+                particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                particlesContainer.appendChild(particle);
             }
         }
-
-        function optimize() {
-            const optimizeBtn = document.getElementById('optimizeBtn');
-            optimizeBtn.classList.add('btn-green');
-            alert('on Optimized DPI Config 2.0');
-        }
-
-        function zenithBoost() {
-            const zenithBoostBtn = document.getElementById('zenithBoostBtn');
-            zenithBoostBtn.classList.add('btn-green');
-            alert('on Zenith Boost Device 2.0');
-        }
-
-        function noRecoil() {
-            const noRecoilBtn = document.getElementById('noRecoilBtn');
-            noRecoilBtn.classList.add('btn-green');
-            alert('on Automatic Norecoil 2.0');
-        }
-
-        function fakeAim() {
-            const fakeAimBtn = document.getElementById('fakeAimBtn');
-            fakeAimBtn.classList.add('btn-green');
-            alert('on Fake Aim xPanel');
-        }
-
-        function downloadConfig() {
-            const downloadConfigBtn = document.getElementById('downloadConfigBtn');
-            downloadConfigBtn.classList.add('btn-green');
-            alert('on Download Config on Device');
-        }
-
-        function boostCpu() {
-            const boostCpuBtn = document.getElementById('boostCpuBtn');
-            boostCpuBtn.classList.add('btn-green');
-            alert('on Boost CPU on Device');
-        }
-
-        function changeRestore() {
-            const changeRestoreBtn = document.getElementById('changeRestoreBtn');
-            changeRestoreBtn.classList.add('btn-green');
-            alert('on Change Restore Setting VIP on Device');
-        }
-
-        function optimizeDevice() {
-            const deviceInput = document.getElementById('deviceInput').value;
-            if (deviceInput.trim() === "") {
-                alert('Thiết bị không xác định');
+        
+        // Check if entered key is correct
+        function checkKey() {
+            const keyInput = document.getElementById('keyInput');
+            const errorMessage = document.getElementById('errorMessage');
+            
+            if (keyInput.value === correctKey) {
+                showMenu();
+                errorMessage.classList.remove('show');
             } else {
-                alert(`Đã buff max hiệu xuất cho thiết bị: ${deviceInput}`);
-                const optimizeDeviceBtn = document.getElementById('optimizeDeviceBtn');
-                optimizeDeviceBtn.classList.add('btn-green');
+                errorMessage.classList.add('show');
+                keyInput.value = '';
+                keyInput.style.animation = 'shake 0.5s';
+                setTimeout(() => {
+                    keyInput.style.animation = '';
+                }, 500);
             }
         }
+        
+        // Show menu screen
+        function showMenu() {
+            document.getElementById('loginScreen').style.display = 'none';
+            document.getElementById('menuScreen').style.display = 'block';
+        }
+        
+        // Toggle feature on/off
+        function toggleFeature(card) {
+            const toggle = card.querySelector('.toggle-switch');
+            
+            if (card.classList.contains('active')) {
+                card.classList.remove('active');
+                toggle.classList.remove('active');
+            } else {
+                card.classList.add('active');
+                toggle.classList.add('active');
+            }
+        }
+        
+        // Logout function
+        function logout() {
+            document.getElementById('loginScreen').style.display = 'block';
+            document.getElementById('menuScreen').style.display = 'none';
+            document.getElementById('keyInput').value = '';
+            document.getElementById('errorMessage').classList.remove('show');
+            
+            // Reset all features to off
+            const features = document.querySelectorAll('.feature-card');
+            features.forEach(card => {
+                card.classList.remove('active');
+                card.querySelector('.toggle-switch').classList.remove('active');
+            });
+        }
+        
+        // Allow Enter key to submit
+        document.getElementById('keyInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                checkKey();
+            }
+        });
+        
+        // Add shake animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes shake {
+                0%, 100% { transform: translateX(0); }
+                25% { transform: translateX(-5px); }
+                75% { transform: translateX(5px); }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Initialize particles on load
+        window.addEventListener('load', createParticles);
     </script>
 </body>
 </html>
